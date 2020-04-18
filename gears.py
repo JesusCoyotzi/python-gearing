@@ -55,7 +55,7 @@ class Gear(object):
         self.make_tooth()
         start_angle = 2 * np.pi / (self.teeth)
         self.gear_profile = np.copy(self.base_tooth)
-        for t in np.linspace(start_angle, 2*np.pi, self.teeth, endpoint=False):
+        for t in np.linspace(start_angle, 2*np.pi, self.teeth, endpoint=True):
             next_tooth = self._rotate(t, self.base_tooth)
             self.gear_profile = np.concatenate((next_tooth, self.gear_profile))
 
